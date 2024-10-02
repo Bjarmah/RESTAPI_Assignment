@@ -5,7 +5,7 @@ Simple API with Pagination, filtering and sort for one of it's endpoints in Type
 # REST API Documentation
 
 ## Base URL
-`[http://localhost:3000](https://github.com/Bjarmah/Simple-API)`
+`[http://localhost:3000](https://github.com/Bjarmah/RESTAPI_Assignment)`
 
 ## Endpoints
 
