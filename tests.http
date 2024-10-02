@@ -1,0 +1,27 @@
+### Create a new user
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "username": "testuser2",
+  "email": "test2@example.com"
+}
+
+### Get all users
+GET http://localhost:3000/users
+
+### Get a specific user
+GET http://localhost:3000/users/2
+
+### Create a product for a user
+POST http://localhost:3000/users/2/products
+Content-Type: application/json
+
+{
+  "name": "Test Product 2.0",
+  "description": "A test product",
+  "price": 9.99
+}
+
+### Get products for a user
+GET http://localhost:3000/users/1/products
