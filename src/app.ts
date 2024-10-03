@@ -3,6 +3,7 @@ import { User, Product } from "./models";
 
 const app = express();
 app.use(express.json());
+app.use(express.static('public'));
 
 let users: User[] = [];
 let products: Product[] = [];
