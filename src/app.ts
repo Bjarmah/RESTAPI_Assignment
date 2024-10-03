@@ -7,6 +7,18 @@ app.use(express.json());
 let users: User[] = [];
 let products: Product[] = [];
 
+// Add a root route handler
+app.get("/", (req: Request, res: Response) => {
+    res.json({
+        message: "Welcome to the API",
+        endpoints: [
+            "/users",
+            "/users/:id",
+            "/users/:id/products"
+        ]
+    });
+});
+
 // Error handling middleware
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     console.error(err.stack);
