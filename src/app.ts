@@ -17,22 +17,18 @@ let products: Product[] = [];
 // Added a root route handler
 app.get("/", (req: Request, res: Response) => {
     if (req.accepts('html')) {
-        res.send(`
-            <!DOCTYPE html>
-            <html>
-                <head>
-                    <title>API Documentation</title>
-                    <meta http-equiv="refresh" content="0;url=/api-docs" />
-                </head>
-                <body>
-                    <p>Redirecting to <a href="/api-docs">API documentation</a>...</p>
-                </body>
-            </html>
-        `);
+        res.sendFile(path.join(__dirname, 'public', 'index.html'));
     } else {
         res.json({
             message: "Welcome to the API",
-            documentation: "/api-docs"
+            documentation_url: "https://whispering-tor-63318-814178c6cfe8.herokuapp.com/api-docs",
+            endpoints: {
+                "GET /users": "Retrieve all users (supports pagination, filtering, and sorting)",
+                "GET /users/:id": "Retrieve a specific user",
+                "POST /users": "Create a new user",
+                "GET /users/:id/products": "Retrieve all products for a user",
+                "POST /users/:id/products": "Create a new product for a user"
+            }
         });
     }
 });
