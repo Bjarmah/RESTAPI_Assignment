@@ -1,66 +1,77 @@
-# Simple-API
-Simple API with Pagination, filtering and sort for one of it's endpoints in Typescript
+# User and Product Management API
 
+This API provides endpoints for managing users and their associated products.
 
-# REST API Documentation
+## Features
+- User management (create, read)
+- Product management per user
+- Pagination, sorting, and filtering
+- OpenAPI/Swagger documentation
 
-## Base URL
-`[http://localhost:3000](https://github.com/Bjarmah/RESTAPI_Assignment)`
+## Live Demo
+API Endpoint: [https://git.heroku.com/whispering-tor-63318.git]  
+API Documentation: [[https://your-api-url](https://git.heroku.com/whispering-tor-63318.git).herokuapp.com/api-docs](https://your-api-url.herokuapp.com/api-docs)
 
-## Endpoints
+## Technologies Used
+- Node.js
+- Express
+- TypeScript
+- OpenAPI/Swagger for documentation
 
-### Users
+## Local Development
 
-#### GET /users
-Get a list of users.
+### Prerequisites
+- Node.js (v14 or higher)
+- npm
 
-Query Parameters:
-- `page` (optional): Page number (default: 1)
-- `limit` (optional): Items per page (default: 10)
-- `sortBy` (optional): Field to sort by (id, username, email, createdAt)
-- `order` (optional): Sort order (asc, desc)
-
-Response:
-```json
-{
-  "data": [User],
-  "page": number,
-  "limit": number,
-  "total": number
-}
+### Installation
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/your-api-repo.git
+cd your-api-repo
 ```
 
-#### POST /users
-Create a new user.
-
-Request Body:
-```json
-{
-  "username": string,
-  "email": string
-}
+2. Install dependencies
+```bash
+npm install
 ```
 
-#### GET /users/:id
-Get a specific user by ID.
-
-### Products
-
-#### GET /users/:userId/products
-Get all products for a specific user.
-
-#### POST /users/:userId/products
-Create a new product for a specific user.
-
-Request Body:
-```json
-{
-  "name": string,
-  "description": string,
-  "price": number
-}
+3. Start the development server
+```bash
+npm run dev
 ```
 
+The API will be available at `http://localhost:3000`
+
+## API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET    | /users   | Get all users (with pagination) |
+| POST   | /users   | Create a new user |
+| GET    | /users/:id | Get a specific user |
+| GET    | /users/:id/products | Get all products for a user |
+| POST   | /users/:id/products | Create a product for a user |
+
+For detailed API documentation, please visit the [API Documentation](https://your-api-url.herokuapp.com/api-docs) page.
+
+## Deployment
+This API is deployed on Heroku. To deploy your own instance:
+
+1. Install the Heroku CLI
+2. Login to Heroku: `heroku login`
+3. Create a new Heroku app: `heroku create`
+4. Deploy: `git push heroku main`
+
+## Contributing
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature/your-feature-name`
+3. Make your changes and commit: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature/your-feature-name`
+5. Submit a pull request
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details
 ## Status Codes
 - 200: Successful GET request
 - 201: Successful POST request (resource created)
