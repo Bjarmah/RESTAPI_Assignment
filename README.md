@@ -9,7 +9,7 @@ This API provides endpoints for managing users and their associated products.
 - OpenAPI/Swagger documentation
 
 ## Live Demo
-API Endpoint: https://git.heroku.com/whispering-tor-63318.git  
+API Endpoint: [Main App](https://whispering-tor-63318-814178c6cfe8.herokuapp.com)  
 API Documentation: [api-docs](https://whispering-tor-63318-814178c6cfe8.herokuapp.com/api-docs) 
 
 ## Technologies Used
