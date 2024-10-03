@@ -10,7 +10,7 @@ This API provides endpoints for managing users and their associated products.
 
 ## Live Demo
 API Endpoint: https://git.heroku.com/whispering-tor-63318.git  
-API Documentation: [https://git.heroku.com/whispering-tor-63318.git/api-docs](https://your-api-url.herokuapp.com/api-docs) 
+API Documentation: [api-docs](https://whispering-tor-63318-814178c6cfe8.herokuapp.com/api-docs) 
 
 ## Technologies Used
 - Node.js
