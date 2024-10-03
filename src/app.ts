@@ -1,23 +1,40 @@
 import express, { Request, Response, NextFunction } from "express";
 import { User, Product } from "./models";
+import swaggerUi from "swagger-ui-express";
+import YAML from "yamljs";
+import path from "path";
 
 const app = express();
+const swaggerDocument = YAML.load(path.join(__dirname, '../openapi.yaml'));
+
 app.use(express.json());
 app.use(express.static('public'));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 let users: User[] = [];
 let products: Product[] = [];
 
-// Add a root route handler
+// Added a root route handler
 app.get("/", (req: Request, res: Response) => {
-    res.json({
-        message: "Welcome to the API",
-        endpoints: [
-            "/users",
-            "/users/:id",
-            "/users/:id/products"
-        ]
-    });
+    if (req.accepts('html')) {
+        res.send(`
+            <!DOCTYPE html>
+            <html>
+                <head>
+                    <title>API Documentation</title>
+                    <meta http-equiv="refresh" content="0;url=/api-docs" />
+                </head>
+                <body>
+                    <p>Redirecting to <a href="/api-docs">API documentation</a>...</p>
+                </body>
+            </html>
+        `);
+    } else {
+        res.json({
+            message: "Welcome to the API",
+            documentation: "/api-docs"
+        });
+    }
 });
 
 // Error handling middleware

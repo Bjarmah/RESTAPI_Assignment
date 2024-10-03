@@ -11,7 +11,8 @@
     },
     "include": [
         "src/**/*",
-        "public/**/*"
+        "public/**/*",
+        "openapi.yaml"
     ],
     "exclude": [
         "node_modules",
