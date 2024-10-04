@@ -44,7 +44,7 @@ npm run dev
 The API will be available at `http://localhost:3000`
 
 ## API Endpoints
-
+ 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET    | /users   | Get all users (with pagination) |
