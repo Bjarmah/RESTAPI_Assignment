@@ -53,7 +53,7 @@ The API will be available at `http://localhost:3000`
 | GET    | /users/:id/products | Get all products for a user |
 | POST   | /users/:id/products | Create a product for a user |
 
-For detailed API documentation, please visit the [API Documentation](https://your-api-url.herokuapp.com/api-docs) page.
+For detailed API documentation, please visit the [API Documentation](https://whispering-tor-63318-814178c6cfe8.herokuapp.com/api-docs) page.
 
 ## Deployment
 This API is deployed on Heroku. To deploy your own instance:
